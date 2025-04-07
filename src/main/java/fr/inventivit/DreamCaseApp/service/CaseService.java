@@ -1,22 +1,24 @@
 package fr.inventivit.DreamCaseApp.service;
 
-import org.springframework.stereotype.Service;
-import fr.inventivit.DreamCaseApp.repository.CaseRepository;
-import fr.inventivit.DreamCaseApp.mapper.CaseMapper;
-import fr.inventivit.DreamCaseApp.models.Case;
 import fr.inventivit.DreamCaseApp.dto.Case.request.CaseRequest;
 import fr.inventivit.DreamCaseApp.dto.Case.response.CaseResponse;
+import fr.inventivit.DreamCaseApp.mapper.CaseMapper;
+import fr.inventivit.DreamCaseApp.models.Case;
+import fr.inventivit.DreamCaseApp.repository.CaseRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-import lombok.RequiredArgsConstructor;
 
 @Service
-@RequiredArgsConstructor
 public class CaseService {
 
-    private final CaseRepository repository;
-    private final CaseMapper mapper;
+    @Autowired
+    private CaseRepository repository;
+    @Autowired
+    private CaseMapper mapper;
 
     public List<CaseResponse> findAll() {
         return repository.findAll()

@@ -1,21 +1,21 @@
 package fr.inventivit.DreamCaseApp.controller;
 
-import lombok.Data;
-import org.springframework.web.bind.annotation.*;
-import fr.inventivit.DreamCaseApp.service.CaseService;
 import fr.inventivit.DreamCaseApp.dto.Case.request.CaseRequest;
 import fr.inventivit.DreamCaseApp.dto.Case.response.CaseResponse;
+import fr.inventivit.DreamCaseApp.service.CaseService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 import java.util.Optional;
-import lombok.RequiredArgsConstructor;
 
 
 @RestController
-@RequiredArgsConstructor
-@RequestMapping("/api/v1/case")
+@RequestMapping("/api/v1/cases")
 public class CaseController {
 
-    private final CaseService service;
+    @Autowired
+    private CaseService service;
 
     @GetMapping
     public List<CaseResponse> findAll() {

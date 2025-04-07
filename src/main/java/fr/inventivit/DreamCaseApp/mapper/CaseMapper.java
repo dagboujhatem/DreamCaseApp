@@ -1,12 +1,12 @@
 package fr.inventivit.DreamCaseApp.mapper;
 
-import org.mapstruct.Mapper;
-import org.mapstruct.MappingTarget;
 import fr.inventivit.DreamCaseApp.dto.Case.request.CaseRequest;
 import fr.inventivit.DreamCaseApp.dto.Case.response.CaseResponse;
 import fr.inventivit.DreamCaseApp.models.Case;
+import org.mapstruct.Mapper;
+import org.mapstruct.MappingTarget;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface CaseMapper {
     CaseResponse toResponse(Case entity);
     Case toEntity(CaseRequest dto);
