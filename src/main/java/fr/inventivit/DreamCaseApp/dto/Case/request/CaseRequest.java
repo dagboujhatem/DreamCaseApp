@@ -1,5 +1,6 @@
 package fr.inventivit.DreamCaseApp.dto.Case.request;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,9 +11,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CaseRequest {
-    private Long caseId;
-    private LocalDateTime creationDate;
-    private LocalDateTime lastUpdateDate;
     private String title;
     private String description;
 }
