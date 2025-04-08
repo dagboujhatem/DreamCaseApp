@@ -5,13 +5,15 @@ import fr.inventivit.DreamCaseApp.dto.Case.response.CaseResponse;
 import fr.inventivit.DreamCaseApp.mapper.CaseMapper;
 import fr.inventivit.DreamCaseApp.models.Case;
 import fr.inventivit.DreamCaseApp.repository.CaseRepository;
-
 import fr.inventivit.DreamCaseApp.service.CaseService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.*;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
